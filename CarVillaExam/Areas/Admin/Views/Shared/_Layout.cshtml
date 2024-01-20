@@ -19,6 +19,18 @@
     <!-- Custom styles for this template-->
     <link href="~/manage/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <link rel="shortcut icon" type="image/icon" href="~/assets/logo/favicon.png" />
+
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+
+    <!--linear icon css-->
+    <link rel="stylesheet" href="~/assets/css/linearicons.css">
+
+    <!--flaticon.css-->
+    <link rel="stylesheet" href="~/assets/css/flaticon.css">
+
+
 </head>
 
 <body id="page-top">
@@ -42,7 +54,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" asp-controller="Dashboard" asp-action="Index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -130,7 +142,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" asp-controller="">
+                <a class="nav-link" asp-controller="Service" asp-action="Index">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span>
                 </a>

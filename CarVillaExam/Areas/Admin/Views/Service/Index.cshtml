@@ -1,0 +1,60 @@
+﻿@using CarVillaExam.Models;
+@model List<Service>
+@{
+    int count = 0;
+}
+
+             <!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+
+            <h3 class="m-0 font-weight-bold text-primary">Services</h3>
+        <div class="container" style="margin-left:69% " >
+  <a class="btn btn-primary" asp-action="Create" asp-controller="Service" >Create</a>
+        </div>
+  </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Count</th>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Icon</th>
+                            <th>Choises</th>
+                        </tr>
+                    </thead
+                    <tbody>
+                        @foreach(var item in Model)
+                        {
+                            count++;
+                            <tr>
+                                <td>@count</td>
+                                <td>@item.Id</td>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td>@Html.Raw(item.Icon)</td>
+                          <td>                      
+                             <a class="btn btn-warning" asp-action="Update" asp-controller="Service" asp-route-id="@item.Id">Update</a>
+                            <a class="btn btn-danger" asp-action="Delete" asp-controller="Service"  asp-route-id="@item.Id">Delete</a>
+                          </td>  
+
+                        </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+            </div>
+<!-- End of Main Content -->

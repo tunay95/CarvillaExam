@@ -44,7 +44,7 @@ namespace CarVillaExam.Controllers
                 }
             }
 
-            await _userManager.AddToRoleAsync(appUser, UserRole.Admin.ToString());
+            await _userManager.AddToRoleAsync(appUser, UserRole.Member.ToString());
             return RedirectToAction(nameof(Login));
         }
 

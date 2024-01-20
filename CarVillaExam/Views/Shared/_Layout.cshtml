@@ -82,12 +82,46 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 							<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-								<li class=" scroll active"><a href="#home">home</a></li>
-								<li class="scroll"><a href="#service">service</a></li>
-								<li class="scroll"><a href="#featured-cars">featured cars</a></li>
-								<li class="scroll"><a href="#new-cars">new cars</a></li>
-								<li class="scroll"><a href="#brand">brands</a></li>
-								<li class="scroll"><a href="#contact">contact</a></li>
+								<li><a href="#home">home</a></li>
+								<li><a href="#service">service</a></li>
+								<li><a href="#featured-cars">featured cars</a></li>
+								<li><a href="#new-cars">new cars</a></li>
+								@if (User.Identity.IsAuthenticated)
+								{
+									<li>
+										<a>
+											@User.Identity.Name
+										</a>
+									</li>
+									<li>
+										<a asp-controller="Account" asp-action="LogOut">
+											Log Out
+										</a>
+									</li>
+									@if (User.IsInRole("Admin"))
+									{
+										<li>
+											<a asp-area="Admin" asp-action="Index" asp-controller="Dashboard">
+												Admin Panel
+											</a>
+										</li>
+
+									}
+								}
+								else
+								{
+									<li>
+										<a asp-action="Login" asp-controller="Account">
+											Login
+										</a>
+									</li>
+									<li>
+										<a asp-action="Register" asp-controller="Account">
+											Register
+										</a>
+									</li>
+								}
+
 							</ul><!--/.nav -->
 						</div><!-- /.navbar-collapse -->
 					</div><!--/.container-->
